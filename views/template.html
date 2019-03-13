@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %} {% endblock %}</title>
+	<title>Pagina Web de Ejemplo</title>
+	<style>
+		body{
+			background-color: #DDDDDD;
+			display: inline-block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			overflow-x: hidden;
+			margin: 0px;
+		}
+		body>div.vertical{
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		    flex-direction: column;
+		    -webkit-align-items: flex-start;
+		    -ms-flex-align: start;
+		    align-items: flex-start;
+		    -webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		    justify-content: center;
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    left: 0;
+		    right: 0;
+		    top: 0;
+		    bottom: 0;
+		}
+		body>div>h1{
+			display: inline-block;
+			position: relative;
+			float: left;
+			width: 100%;
+			height: auto;
+			text-align: center;
+		}
+		body>div>h2{
+			display: inline-block;
+			position: relative;
+			float: left;
+			width: 100%;
+			height: auto;
+			text-align: center;
+		}
+	</style>
+
+	{% block extraCSS %}{% endblock %}
+
+</head>
+<body>
+	{% if const.active_index == true %}
+    	<p>Home activo</p>
+	{% endif %}
+	{% if const.active_contacto == true %}
+    	<p>Contacto activo</p>
+	{% endif %}
+	<div class="vertical">
+		{% block content %}{% endblock %}
+	</div>
+</body>
+	<script>
+		var base_url;
+		window.base_url = "{{ const.BASE_URL }}";
+	</script>
+	{% block extraJS %}{% endblock %}
+</html>
