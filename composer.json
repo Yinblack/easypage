@@ -17,5 +17,10 @@
     "psr-4": {
         "yinblack\\easypage\\": "src"
     }
+  },
+  "autoload-dev": {
+      "psr-4": {
+          "yinblack\\easypage\\Tests\\": "tests"
+      }
   }
 }
