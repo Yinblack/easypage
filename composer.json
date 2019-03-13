@@ -1,5 +1,5 @@
 {
-  "name": "Yinblack/easypage",
+  "name": "yinblack/easypage",
   "description": "Micro framework para la creación paginas web integrado con twig",
   "minimum-stability": "dev",
   "license": "Apache License 2.0",
