@@ -15,12 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-        "yinblack\\easypage\\": "src"
+        "yinblack\\easypage\\": "/"
     }
-  },
-  "autoload-dev": {
-      "psr-4": {
-          "yinblack\\easypage\\Tests\\": "tests"
-      }
   }
 }
