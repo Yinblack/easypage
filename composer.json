@@ -1,5 +1,15 @@
 {
-    "require": {
-
+  "name": "Yinblack/easypage",
+  "description": "Micro framework para la creación paginas web integrado con twig",
+  "minimum-stability": "dev",
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Daniel Arvizu",
+      "homepage": "http://www.zedaya.com"
     }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  }
 }
