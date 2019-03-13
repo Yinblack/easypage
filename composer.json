@@ -1,6 +1,7 @@
 {
   "name": "yinblack/easypage",
   "description": "Micro framework para la creación paginas web integrado con twig",
+  "type": "project",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
