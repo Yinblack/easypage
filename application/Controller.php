@@ -62,6 +62,8 @@ abstract class Controller
         $searchVal = array('_es','_en','_de','_zh','_fr','_pt','_it','_ru','_ja');
         $url_cleaned = str_replace($searchVal, '', $url);
         $this->_const['active_'.$url_cleaned]=true;
+        $this->_const['active_complete']=$url;
+        $this->_const['active']=$url_cleaned;
     }
     
     abstract public function index();
