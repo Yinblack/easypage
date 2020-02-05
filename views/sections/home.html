@@ -2,7 +2,7 @@
 
 
 {% block title %}
-EASYPAGE | HOME
+EASYPAGE | Inicio
 {% endblock %}
 
 
@@ -11,11 +11,48 @@ EASYPAGE | HOME
 
 
 {% block extraJS %}
+<script>
+    $("#clickme").click(function(e){
+    	e.preventDefault();
+        alert('You clicked on the text');
+    });
+</script>
 {% endblock %}
-
 
 {% block content %}
 
-<h1>HOME</h1>
+<!-- PARA USAR IDIOMAS PRUEBA TERMINAR LAS URL EN _(+EL IDIOMA SELECCIONADO)
+clientes_en
+clientes_de
+clientes_zh -->
 
+<div class="py-6 bg-tertiary" id="example_block">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 text-center">
+				{% if const.LAN == "_es" %}
+				<h4 class="light">LENGUAJE: Español</h4>
+				{% elseif const.LAN == "_en" %}
+				<h4 class="light">LENGUAJE: Ingles</h4>
+				{% elseif const.LAN == "_de" %}
+				<h4 class="light">LENGUAJE: Alemán</h4>
+				{% elseif const.LAN == "_zh" %}
+				<h4 class="light">LENGUAJE: Chino</h4>
+				{% elseif const.LAN == "_fr" %}
+				<h4 class="light">LENGUAJE: Francés</h4>
+				{% elseif const.LAN == "_pt" %}
+				<h4 class="light">LENGUAJE: Portugués</h4>
+				{% elseif const.LAN == "_it" %}
+				<h4 class="light">LENGUAJE: Italiano</h4>
+				{% elseif const.LAN == "_ru" %}
+				<h4 class="light">LENGUAJE: Ruso</h4>
+				{% elseif const.LAN == "_ja" %}
+				<h4 class="light">LENGUAJE: Japones</h4>
+				{% else %}
+				<h4 class="light">LENGUAJE: Default</h4>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

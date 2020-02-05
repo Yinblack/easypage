@@ -8,7 +8,16 @@ abstract class Controller
         /*TWIG INPLEMENTATION*/
         require_once 'assets/twig/vendor/autoload.php';
         $loader = new Twig_Loader_Filesystem('./views');
-        $this->_twig = new Twig_Environment($loader);
+
+        /*DISABLE DEBUG OPTION*/
+        //$this->_twig = new Twig_Environment($loader);
+
+        /*ENABLE DEBUG FUNCTION*/
+        $this->_twig = new Twig_Environment(
+            $loader, ['debug'=>true, 'cache'=>false, /*other options */]
+        );
+        $this->_twig->addExtension(new \Twig_Extension_Debug());
+
         /**/
         /*CONSTANTES*/
         $this->_const = array();

@@ -1,0 +1,46 @@
+.pb-6, .py-6 {
+    padding-bottom: 4.5rem !important;
+}
+.pt-6, .py-6 {
+    padding-top: 4.5rem !important;
+}
+.pb-0, .py-0 {
+    padding-bottom: 0 !important;
+}
+.pt-0, .py-0 {
+    padding-top: 0 !important;
+}
+.parallax_css{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+.disabled{
+	opacity: .75 !important;
+	pointer-events: none !important;
+}
+
+@mixin block_ctrl() {
+	display: inline-block;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+@mixin absolute_center() {
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	top: 0px;
+	margin: auto;
+}
+@mixin ease($time) {
+	-webkit-transition: all $time ease;
+	   -moz-transition: all $time ease;
+	    -ms-transition: all $time ease;
+	     -o-transition: all $time ease;
+	        transition: all $time ease;
+}
