@@ -41,6 +41,10 @@
 
 
 </body>
+  <script>
+    var base_url;
+    window.base_url = "{{ const.BASE_URL }}";
+  </script>
 	<script src="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	{% block extraJS %}{% endblock %}
 </html>
