@@ -5,20 +5,19 @@ abstract class Controller
     
     public function __construct() {
         $this->_view = new View(new Request);
-        /*TWIG INPLEMENTATION*/
-        require_once 'assets/twig/vendor/autoload.php';
-        $loader = new Twig_Loader_Filesystem('./views');
 
-        /*DISABLE DEBUG OPTION*/
-        //$this->_twig = new Twig_Environment($loader);
 
-        /*ENABLE DEBUG FUNCTION*/
-        $this->_twig = new Twig_Environment(
-            $loader, ['debug'=>true, 'cache'=>false, /*other options */]
-        );
-        $this->_twig->addExtension(new \Twig_Extension_Debug());
-
+        /*TWIG3 INPLEMENTATION*/
+        require_once './vendor/autoload.php';
+        $loader = new \Twig\Loader\FilesystemLoader('./views');
+        $this->_twig = new \Twig\Environment($loader, [
+            'debug'=>true,
+            'cache' => false,
+        ]);
+        $this->_twig->addExtension(new \Twig\Extension\DebugExtension());
         /**/
+
+
         /*CONSTANTES*/
         $this->_const = array();
         $jsondata = file_get_contents('routes/config.json'); 

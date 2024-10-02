@@ -1,95 +1,32 @@
-$theme-colors: (
-  "primary": #008eaf,
-  "secondary": #FFFFFF,
-  "tertiary": #000000
-);
-@import "../fonts/font_awesome/font-awesome";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+// Functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+// Variable overrides second
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Required Bootstrap imports
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Optional components
+@import "../node_modules/bootstrap/scss/grid";
 @import "./font";
-@import "./helper";
+@import "./gral";
+@import "./mixins";
+
 html{
     overflow-x: hidden;
     max-width: 100vw;
+    font-size: 16px;
+    font-weight: 400;
 	body{
-	    font-family: 'Avenir Next', sans-serif;
-	    font-size: 1rem;
     	overflow-x: hidden;
-    	max-width: 100vw;
-    	font-weight: 400;
-    	color: #505050;
+    	max-width: 100vw;    	
     	line-height: 1.6;
-	}
-}
-
-nav.custom_nav{
-	background-color: theme-color("primary");
-	a.navbar-brand{
-		>img{
-			display: inline-block;
-    		position: relative;
-    		float: left;
-    		width: 275px;
-		}
-	}
-	button.navbar-toggler{
-	    outline: none;
-	    margin: 15px 0px;
-		&.collapsed{
-			>span.navbar-toggler-icon{
-				transform: rotate(0deg) translate(0px,0px);
-				&:before{
-	    			transform: rotate(0deg) translate(4px,-21px);
-	    			width: 1.5em;
-				}
-				&:after{
-	    			transform: rotate(0deg) translate(0px, -21px);
-	    			width: 1.5em;
-				}
-			}
-		}
-		>span.navbar-toggler-icon{
-			background-color: theme-color("primary");
-			height: 5px;
-			transform: rotate(90deg) translate(-0px,0px);
-			@include ease(.25s);
-			&:after,
-			&:before{
-				content: "";
-				background-color: theme-color("primary");
-	    		display: inline-block;
-	    		position: relative;
-	    		width: 1.5em;
-	    		height: 5px;
-				transform: rotate(90deg) translate(-0px,0px);
-				@include ease(.25s);
-			}
-			&:before{
-	    		transform: rotate(-45deg) translate(14px,6px);
-	    		width: 1em;
-	    		left: -4px;
-			}
-			&:after{
-	    		transform: rotate(45deg) translate(-20px,-34px);
-	    		width: 1em;
-			}
-		}
-	}
-	div.navbar-collapse{
-		>ul.navbar-nav{
-			>li.nav-item {
-				>a.nav-link{
-					@include ease(.15s);
-					color: theme-color("secondary");
-					&:hover{
-						color: darken( theme-color("secondary"), 15% );
-					}
-				}
-				&.active{
-					>a.nav-link{
-						color: darken( theme-color("tertiary"), 15% );
-					}
-				}
-			}
-		}
 	}
 }
