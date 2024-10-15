@@ -1,0 +1,16 @@
+<header id="header_01">
+	<div class="container">
+		<a href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}">
+			<img src="{{ const.BASE_URL }}assets/img/logo.svg" alt="">
+		</a>
+		<!------------- NavBar -->
+			{% include 'components/sub/nav.html' %}
+		<!-- NavBar ------------->
+		<button class="hamburger" type="button">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>  
+	</div>
+</header>
+<script src="{{ const.BASE_URL }}assets/js/header_01.js"></script>

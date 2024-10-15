@@ -1,0 +1,123 @@
+#marcas{
+    margin-bottom: calc(3vh + 10px);
+    padding: 0px 65px;
+	.splide__list{
+		.splide__slide{
+			>div{
+				display: inline-flex;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				padding: 15px 30px;
+				>a{
+					display: inline-flex;
+					position: relative;
+					max-width: 100%;
+					>img{
+						width: 225px;
+					    max-width: 70svw;
+						-moz-transform: scale(1) !important;
+						-webkit-transform: scale(1) !important;
+						-o-transform: scale(1) !important;
+						-ms-transform: scale(1) !important;
+						transform: scale(1) !important;
+						@include ease(.25s);
+					}
+					&:hover{
+						>img{
+							-moz-transform: scale(1.1) !important;
+							-webkit-transform: scale(1.1) !important;
+							-o-transform: scale(1.1) !important;
+							-ms-transform: scale(1.1) !important;
+							transform: scale(1.1) !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.splide__arrows{
+		>button.splide__arrow{
+    		border-radius: 10px;
+    		width: 50px;
+    		height: 50px;
+    		background-color: $primary;
+    		opacity: .75;
+			@include ease(.25s);
+			&.splide__arrow--prev{
+				left: 10px;
+				>svg{
+					-moz-transform: rotate(180deg) scale(1) !important;
+					-webkit-transform: rotate(180deg) scale(1) !important;
+					-o-transform: rotate(180deg) scale(1) !important;
+					-ms-transform: rotate(180deg) scale(1) !important;
+					transform: rotate(180deg) scale(1) !important;
+				}
+			}
+			&.splide__arrow--next{
+				right: 10px;
+				>svg{
+					-moz-transform: rotate(0deg) scale(1) !important;
+					-webkit-transform: rotate(0deg) scale(1) !important;
+					-o-transform: rotate(0deg) scale(1) !important;
+					-ms-transform: rotate(0deg) scale(1) !important;
+					transform: rotate(0deg) scale(1) !important;
+				}
+			}
+			>svg{
+				height: 20px;
+    			width: 20px;
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -o-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+				@include ease(.5s);
+				path{
+					fill: $light;
+					@include ease(.5s);
+				}
+			}
+			&:hover{
+				opacity: 1;
+				&.splide__arrow--prev{
+					>svg{
+						-moz-transform: rotate(185deg) scale(1.2) !important;
+						-webkit-transform: rotate(185deg) scale(1.2) !important;
+						-o-transform: rotate(185deg) scale(1.2) !important;
+						-ms-transform: rotate(185deg) scale(1.2) !important;
+						transform: rotate(185deg) scale(1.2) !important;
+					}
+				}
+				&.splide__arrow--next{
+					>svg{
+						-moz-transform: rotate(-5deg) scale(1.2) !important;
+						-webkit-transform: rotate(-5deg) scale(1.2) !important;
+						-o-transform: rotate(-5deg) scale(1.2) !important;
+						-ms-transform: rotate(-5deg) scale(1.2) !important;
+						transform: rotate(-5deg) scale(1.2) !important;
+					}
+				}
+			}
+		}
+	}
+	.splide__pagination{
+		bottom: calc(-3vh - 10px);
+		>li{
+			>button{
+				height: 12px;
+				width: 12px;
+				border-radius: 3px;
+				border: none;
+				outline: none;
+				box-shadow: none;
+				margin: 0px 5px;
+				background-color: transparentize($primary, .5);
+				@include ease(.25s);
+				&.is-active{
+					width: 16px;
+				}
+			}
+		}
+	}
+}

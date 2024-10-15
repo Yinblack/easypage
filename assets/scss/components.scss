@@ -1,0 +1,54 @@
+.block_info{
+    margin-top: 33px;
+    padding: 30px;
+    position: relative;
+    &:after{
+    	content: '';
+    	display: inline-block;
+    	position: absolute;
+    	border: 1px solid $primary;
+    	left: 0px;
+    	top: 0px;
+    	bottom: 0px;
+    	right: 0px;
+    	height: calc(100% - 30px);
+    	width: calc(100% - 30px);
+    	margin: auto;
+    	z-index: 1;
+    	pointer-events: none;
+    }
+		>div{
+			&:first-child{
+    			display: inline-flex;
+    			height: 66px;
+    			width: 66px;
+    			padding: 0px;
+    			border: 1px solid $primary;
+    			align-items: center;
+    			justify-content: center;
+    			background-color: $primary;
+    			top: -45px;
+    			position: relative;
+    			z-index: 2;
+				>svg{
+					display: inline-flex;
+					position: relative;
+					width: 45px;
+					height: 45px;
+					path{
+						fill: $light;
+					}
+				}
+			}
+			&:last-child{
+				>span{
+					display: block;
+					position: relative;
+					width: 100%;
+				}
+				>a{
+
+				}
+			}
+		}
+}

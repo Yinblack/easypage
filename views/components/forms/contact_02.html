@@ -1,0 +1,57 @@
+<script
+  type="text/javascript"
+  src="{{ const.BASE_URL }}node_modules/@pnotify/core/dist/PNotify.js"
+></script>
+<script
+  type="text/javascript"
+  src="{{ const.BASE_URL }}node_modules/@pnotify/mobile/dist/PNotifyMobile.js"
+></script>
+<script type="text/javascript">
+  PNotify.defaultModules.set(PNotifyMobile, {});
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+{% if const.LAN == "_en" %}
+	<script>
+		validate.validators.presence.options = {message: "can´t be empty."};
+		validate.validators.numericality.options = {message: "must be a numeric value."};
+	</script>
+{% else %}
+	<script>
+		validate.validators.presence.options = {message: "no puede estar vacío."};
+		validate.validators.numericality.options = {message: "debe de ser un valor númerico."};
+	</script>
+{% endif %}
+
+
+<form class="row g-4 position-relative form-style01" id="contacto">
+  <div class="col-md-12">
+    <input type="text" class="form-control" id="nombres" name="nombres" aria-describedby="vFeedback01" placeholder='{% if const.LAN == "_en" %}Name{% else %}Nombre{% endif %}'>
+    <div id="vFeedback01" class="invalid-feedback"></div>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" id="telefono" name="telefono" aria-describedby="vFeedback02" placeholder='{% if const.LAN == "_en" %}Phone{% else %}Teléfono{% endif %}'>
+    <div id="vFeedback02" class="invalid-feedback"></div>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="vFeedback03" placeholder='Email'>
+    <div id="vFeedback03" class="invalid-feedback"></div>
+  </div>
+  <div class="col-md-12">
+    <textarea type="text" class="form-control" id="comentario" name="comentario" aria-describedby="vFeedback04" style="height: 100px" placeholder='{% if const.LAN == "_en" %}Comment{% else %}Comentario{% endif %}'></textarea>
+    <div id="vFeedback04" class="invalid-feedback"></div>
+  </div>
+  <div class="col-12">
+		<div class="row justify-content-end">
+			<div class="col-auto">
+				<button type="submit" class="btn btn-outline-secondary px-4">{% if const.LAN == "_en" %}Send{% else %}Enviar{% endif %}</button>
+			</div>
+		</div>
+  </div>
+	<div class="row justify-content-center align-items-center bg-secondary loader">
+		<div class="spinner-border" role="status">
+		  <span class="visually-hidden">{% if const.LAN == "_en" %}Loading...{% else %}Cargando...{% endif %}</span>
+		</div>
+	</div>	
+</form>
+
+<script src="{{ const.BASE_URL }}assets/js/contact_02.js"></script>

@@ -1,0 +1,62 @@
+form{
+    .loader{
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+        margin: 0;
+        pointer-events: none;
+        opacity: 0;
+        @include ease(.5s);
+    }
+    &.loading{
+        .loader{
+            pointer-events: auto;
+            opacity: 1;
+        }
+    }
+}
+
+.form-style01{
+    .form-control{
+        background-color: transparentize($primary, .85);
+        border: none;
+        box-shadow: none;
+        padding: 10px 15px;
+        border-radius: 0px;
+        border-color: transparent;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        &::placeholder {
+          color: transparentize($dark, .5);
+          font-size: .85rem; 
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: transparentize($dark, .5);
+          font-size: .85rem; 
+        }
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: transparentize($dark, .5);
+          font-size: .85rem; 
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          color: transparentize($dark, .5);
+          font-size: .85rem; 
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          color: transparentize($dark, .5);
+          font-size: .85rem; 
+        }
+        &::-webkit-input-placeholder { /* Chrome, Safari, Opera */
+          color: transparentize($dark, .5);
+          font-size: .85rem; 
+        }
+        &.is-invalid{
+            border-color: $danger;
+        }
+    }
+}

@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<link rel="icon" href="assets/img/icon.png" type="image/png">
 	<link href="{{ const.BASE_URL }}assets/css/custom.css" rel="stylesheet">
-	<script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
 	<title>{% block title %} {% endblock %}</title>
 
 	{% block extraCSS %}{% endblock %}
@@ -13,32 +12,18 @@
 </head>
 <body>
 
-<nav class="navbar custom_nav navbar-expand-lg">
-	<div class="container">
-  	<a class="navbar-brand" href="{{ const.BASE_URL }}">
-  		<img src="{{ const.BASE_URL }}assets/img/logo.svg" alt="">
-  	</a>
-  	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-  	  	<span class="navbar-toggler-icon"></span>
-  	</button>
-  	<div class="collapse navbar-collapse" id="navbarsExample03">
-  	  	<ul class="navbar-nav ml-auto">
-  	  	  	<li class="nav-item {% if const.active_index == true %}active{% endif %}">
-  	  	  	  	<a class="nav-link" href="{{ const.BASE_URL }}">INICIO</a>
-  	  	  	</li>
-  	  	  	<li class="nav-item {% if const.active_clientes == true %}active{% endif %}">
-  	  	  	  	<a class="nav-link" href="{{ const.BASE_URL }}clientes">CLIENTES</a>
-  	  	  	</li>
-  	  	  	<li class="nav-item {% if const.active_servicios == true %}active{% endif %}">
-  	  	  	  	<a class="nav-link" href="{{ const.BASE_URL }}clientes">SERVICIOS</a>
-  	  	  	</li>
-  	  	</ul>
-  	</div>
-  	</div>
-</nav>
+<!------------- Header -->
+	{% include 'components/header/header_03.html' %}
+<!-- Header ------------->
 
-	{% block content %}{% endblock %}
-
+<div id="wrapper">
+  <div id="content">
+		{% block content %}{% endblock %}
+		<!------------- Footer -->
+			{% include 'components/footers/footer.html' %}
+		<!-- Footer ------------->
+  </div>
+</div>
 
 </body>
   <script>
@@ -46,5 +31,10 @@
     window.base_url = "{{ const.BASE_URL }}";
   </script>
 	<script src="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.min.js"></script>
+  <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+  <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollSmoother.min.js"></script>
+
+ 	<script src="{{ const.BASE_URL }}assets/js/template.js"></script>
 	{% block extraJS %}{% endblock %}
 </html>

@@ -1,0 +1,92 @@
+ul.social{
+    display: inline-flex;
+    list-style-type: none;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    >li{
+        display: inline-flex;
+        margin-right: 10px;
+        &:last-child{
+            margin-right: 0px;
+        }
+        >a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: color(srgb 1 1 1 / 0.66);
+            overflow: hidden;
+            >svg{
+                display: inline-flex;
+                width: 55% !important;
+                height: auto !important;
+                opacity: 1 !important;
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -o-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                @include ease(.25s);
+                path{
+                    fill: $gray-800;
+                }
+            }
+            &:hover{
+                background-color: color(srgb 1 1 1 / 1);
+                >svg{
+                    -moz-transform: scale(1.2);
+                    -webkit-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+#footer01{
+    ul.social{
+        >li{
+            margin-right: 15px;
+            >a{
+                background: transparent;
+                height: 45px;
+                width: 45px;
+                -moz-transform: translate(0px, 0px);
+                -webkit-transform: translate(0px, 0px);
+                -o-transform: translate(0px, 0px);
+                -ms-transform: translate(0px, 0px);
+                transform: translate(0px, 0px);
+                @include ease(.5s);
+                >svg{
+                    width: 50%;
+                    -moz-transform: scale(1) !important;
+                    -webkit-transform: scale(1) !important;
+                    -o-transform: scale(1) !important;
+                    -ms-transform: scale(1) !important;
+                    transform: scale(1) !important;
+                    path{
+                        fill: $gray-100;
+                    }
+                }
+                &:hover{
+                    background-color: transparentize($dark, .75);
+                    -moz-transform: translate(0px, -5px);
+                    -webkit-transform: translate(0px, -5px);
+                    -o-transform: translate(0px, -5px);
+                    -ms-transform: translate(0px, -5px);
+                    transform: translate(0px, -5px);
+                }
+            }
+        }
+    }
+}

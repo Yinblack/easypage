@@ -1,0 +1,45 @@
+<nav>
+	<ul>
+		<li>
+			<a value='{% if const.LAN == "_en" %}Home{% else %}Inicio{% endif %}' href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}#first">
+				<span>{% if const.LAN == "_en" %}Home{% else %}Inicio{% endif %}</span>
+			</a>
+		</li>
+		<li>
+			<a value='{% if const.LAN == "_en" %}About Us{% else %}Nosotros{% endif %}' href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}#second">
+				<span>{% if const.LAN == "_en" %}About Us{% else %}Nosotros{% endif %}</span>
+			</a>
+		</li>
+		<li>
+			<a value='{% if const.LAN == "_en" %}Menus{% else %}Menús{% endif %}' href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}#third">
+				<span>{% if const.LAN == "_en" %}Menus{% else %}Menús{% endif %}</span>
+			</a>
+		</li>
+		<li>
+			<a value='{% if const.LAN == "_en" %}Reservations{% else %}Reservaciones{% endif %}' href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}#fourth">
+				<span>{% if const.LAN == "_en" %}Reservations{% else %}Reservaciones{% endif %}</span>
+			</a>
+		</li>
+		<li>
+			<a value='{% if const.LAN == "_en" %}Gallery{% else %}Galería{% endif %}' href="{{ const.BASE_URL }}galeria{% if const.LAN == '_en' %}_en{% endif %}">
+				<span>{% if const.LAN == "_en" %}Gallery{% else %}Galería{% endif %}</span>
+			</a>
+		</li>
+		<li>
+			<a value='{% if const.LAN == "_en" %}Contact Us{% else %}Contacto{% endif %}' href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}#fifth">
+				<span>{% if const.LAN == "_en" %}Contact Us{% else %}Contacto{% endif %}</span>
+			</a>
+		</li>
+		<li class="lang">
+			{% if const.LAN == "_en" %}
+				<a href="{{ const.BASE_URL }}{{ const.active }}">
+					<img src="{{ const.BASE_URL }}assets/img/flag_mx.webp" alt="">
+				</a>
+			{% else %}
+				<a href="{{ const.BASE_URL }}{{ const.active }}_en">
+					<img src="{{ const.BASE_URL }}assets/img/flag_usa.webp" alt="">
+				</a>
+			{% endif %}
+		</li>
+	</ul>
+</nav>

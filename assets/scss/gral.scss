@@ -1,3 +1,4 @@
+
 .pb-6, .py-6 {
     padding-bottom: 4.5rem !important;
 }
@@ -13,4 +14,37 @@
 .disabled{
 	opacity: .75 !important;
 	pointer-events: none !important;
+}
+body{
+    section{
+        padding-top: calc(4svh + 2svw + 20px);
+        padding-bottom: calc(4svh + 2svw + 20px);
+    }
+}
+.title>small{
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 42%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn{
+    font-size: 1rem;
+    padding: 7px 30px;
+    @include ease(.5s);
+    &.btn-lg{
+        font-size: 1rem;
+        padding: 10px 35px;
+    }
+}
+
+@media (min-width: 1921px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 1600px;
+    }
+}
+.container-fluid {
+    max-width: 100% !important;
 }

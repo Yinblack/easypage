@@ -1,0 +1,27 @@
+<script src="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/css/splide.min.css">
+<div id="marcas" class="splide" role="group" aria-label="Splide Basic HTML Example">
+  	<div class="splide__track">
+		<ul class="splide__list">
+			{% for i in 1..12 %}
+				<li class="splide__slide">
+					<div>
+						<a href="#">
+							<img src="{{ const.BASE_URL }}/assets/img/test/marcas/marca_{{ i }}.svg" alt="">
+						</a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+  	</div>
+</div>
+<script>
+  	document.addEventListener( 'DOMContentLoaded', function() {
+    	var splide = new Splide( '#marcas', {
+		  	type : 'loop',
+		  	focus: 'center',
+		  	autoWidth: true
+		});
+		splide.mount();
+  } );
+</script>

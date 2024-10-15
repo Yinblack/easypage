@@ -1,0 +1,56 @@
+<script src="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/css/splide.min.css">
+
+<section class="p-0">
+	<div class="container container-fluid p-0 m-0">
+		<div id="slider_maxsize" class="splide" role="group" aria-label="Splide Basic HTML Example">
+		  	<div class="splide__track">
+				<ul class="splide__list">
+					{% for i in 1..5 %}
+						<li class="splide__slide">
+							<div class="row m-0 justify-content-center align-items-center position-relative">
+								<img src="{{ const.BASE_URL }}/assets/img/test/slider/slider_0{{ i }}.webp" alt="">
+								<div class="col-12 col-md-10 col-lg-8 col-xl-6 p-0">
+									<div class="row text-center row-gap-4 px-5">
+										<div class="col-12">
+											<span class="text-light d-block">Assumenda cupiditate pariatur.</span>
+											<span class="h2 fw-light text-light">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</span>
+										</div>
+										<div class="col-12">
+											<a href="#" class="btn btn-outline-light">Ver más</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+		  	</div>
+		</div>
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var splideMaxSize = new Splide('#slider_maxsize', {
+			type: 'fade',//slide, loop, fade
+			focus: 'center',
+			rewind: true,
+			pagination: true,
+			arrows: true,
+			perPage: 1,
+		});
+		splideMaxSize.on('mounted move', function() {
+			var activeSlide = splideMaxSize.Components.Slides.getAt(splideMaxSize.index).slide;
+			var spans = activeSlide.querySelectorAll('span');
+			var button = activeSlide.querySelector('a');
+			gsap.to(spans, { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: 'power2.out' });
+			gsap.to(button, { opacity: 1, y: 0, delay: 0.4, duration: 0.8, ease: 'power2.out' });
+		});
+		splideMaxSize.on('hidden', function(slide) {
+			var spans = slide.slide.querySelectorAll('span');
+			var button = slide.slide.querySelector('a');
+			gsap.set([spans, button], { opacity: 0, y: 20 });
+		});
+		splideMaxSize.mount();
+	});
+</script>

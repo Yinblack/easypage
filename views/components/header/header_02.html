@@ -1,0 +1,31 @@
+<header id="header_02">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-auto">
+					<div class="row">
+						<div class="col-12">
+							<button class="hamburger" type="button">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button> 
+							<a href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}">
+								<img src="{{ const.BASE_URL }}assets/img/logo.svg" alt="">
+							</a>
+						</div>
+						<div class="col-12">
+							<!------------- NavBar -->
+								{% include 'components/sub/nav.html' %}
+							<!-- NavBar ------------->
+						</div>
+					</div>
+				</div>
+				<div class="col-auto">
+					<!------------- Social List -->
+						{% include 'components/sub/social_list_short.html' %}
+					<!-- Social List ------------->
+				</div>
+			</div>
+		</div>
+</header>
+<script src="{{ const.BASE_URL }}assets/js/header_02.js"></script>
