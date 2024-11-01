@@ -48,3 +48,20 @@ body{
 .container-fluid {
     max-width: 100% !important;
 }
+
+
+@include media-breakpoint-down(sm) {
+    #quienes-somos>div:nth-child(2)>div.row>div:nth-child(2) {
+        padding: 0px 0px;
+    }
+    #cat>div.container {
+        background-color: #2549fc;
+        padding: 15px;
+        border-radius: 25px;
+    }
+    #cotiza button {
+        letter-spacing: .5px;
+        padding: 10px 5px;
+        font-size: .9rem;
+    }
+}

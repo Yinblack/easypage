@@ -1,27 +1,34 @@
 <script src="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
 <link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/css/splide.min.css">
-<div id="marcas" class="splide" role="group" aria-label="Splide Basic HTML Example">
+<div id="marcas" class="splide splide_icons" role="group" aria-label="Splide Basic HTML Example">
   	<div class="splide__track">
 		<ul class="splide__list">
-			{% for i in 1..12 %}
+    		{% for logo in logos %}
 				<li class="splide__slide">
 					<div>
-						<a href="#">
-							<img src="{{ const.BASE_URL }}/assets/img/test/marcas/marca_{{ i }}.svg" alt="">
+						{% if logo.url %}
+							<a href="{{ logo.url }}">
+						{% else %}
+							<a>
+						{% endif %}
+							<img src="{{ const.BASE_URL }}/assets/img/{{ logo.img }}">
 						</a>
 					</div>
 				</li>
-			{% endfor %}
+    		{% endfor %}
 		</ul>
   	</div>
 </div>
 <script>
-  	document.addEventListener( 'DOMContentLoaded', function() {
-    	var splide = new Splide( '#marcas', {
-		  	type : 'loop',
-		  	focus: 'center',
-		  	autoWidth: true
-		});
-		splide.mount();
-  } );
+  document.addEventListener('DOMContentLoaded', function() {
+    var splideElements = document.querySelectorAll('.splide_icons');
+    splideElements.forEach(function(splideElement) {
+      var splide = new Splide(splideElement, {
+        type: 'loop',
+        focus: 'center',
+        autoWidth: true,
+      });
+      splide.mount();
+    });
+  });
 </script>

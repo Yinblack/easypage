@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  	<link rel="icon" href="assets/img/icon.png" type="image/png">
-	<link href="{{ const.BASE_URL }}assets/css/custom.css" rel="stylesheet">
-	<title>{% block title %} {% endblock %}</title>
-
-	{% block extraCSS %}{% endblock %}
-
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<link rel="icon" href="{{ const.BASE_URL }}assets/img/icon.ico" type="image/x-icon">
+		<link href="{{ const.BASE_URL }}assets/css/custom.css" rel="stylesheet">
+		<title>{% block title %} {% endblock %}</title>
+		{% block extraCSS %}{% endblock %}
 </head>
 <body>
 
 <!------------- Header -->
-	{% include 'components/header/header_03.html' %}
+	{% include 'components/header/header_04.html' %}
 <!-- Header ------------->
 
 <div id="wrapper">
@@ -34,7 +32,41 @@
 	<script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.min.js"></script>
   <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.min.js"></script>
   <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollSmoother.min.js"></script>
-
  	<script src="{{ const.BASE_URL }}assets/js/template.js"></script>
+	<script>
+		document.querySelectorAll('.js_effect').forEach(function(anchor) {
+		  anchor.addEventListener('click', function(event) {
+		    event.preventDefault();
+		    const hrefValue = this.getAttribute('href');
+		    const targetID = hrefValue.split('#')[1]; // Extrae el ID del enlace
+		    const target = document.getElementById(targetID); // Busca el elemento por ID
+		    if (target) { // Verifica que el elemento existe
+		      const targetPosition = target.getBoundingClientRect().top;
+		      const startPosition = window.pageYOffset;
+		      const distance = targetPosition-100;
+		      const duration = 100;
+		      let start = null;
+		      function animationScroll(currentTime) {
+		        if (start === null) start = currentTime;
+		        const timeElapsed = currentTime - start;
+		        const run = ease(timeElapsed, startPosition, distance, duration);
+		        window.scrollTo(0, run);
+		        if (timeElapsed < duration) requestAnimationFrame(animationScroll);
+		      }
+		      function ease(t, b, c, d) {
+		        t /= d / 2;
+		        if (t < 1) return c / 2 * t * t + b;
+		        t--;
+		        return -c / 2 * (t * (t - 2) - 1) + b;
+		      }
+		      requestAnimationFrame(animationScroll);
+		  		const hamburger_ = document.querySelector('.hamburger');
+		  		const header = document.querySelector('header');
+		  		hamburger_.classList.remove('is-active');
+		  		header.classList.remove('show_menu');
+		    }
+		  });
+		});
+	</script>
 	{% block extraJS %}{% endblock %}
 </html>

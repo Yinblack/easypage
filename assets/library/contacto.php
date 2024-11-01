@@ -2,13 +2,21 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recoger los datos del formulario
-    $nombres    = $_POST['nombres'];
-    $telefono   = $_POST['telefono'];
-    $email      = $_POST['email'];
-    $comentario = $_POST['comentario'];
+    $nombres    = $_POST['nombre'] ?? '';
+    $telefono   = $_POST['telefono'] ?? '';
+    $email      = $_POST['email'] ?? '';
+    $empresa    = $_POST['empresa'] ?? '';
+    $producto   = $_POST['producto'] ?? '';
+    $detalles   = $_POST['detalles'] ?? '';
+
+    // Parámetros opcionales
+    $servicio   = $_POST['servicio'] ?? 'No especificado';
+    $origen     = $_POST['origen'] ?? 'No especificado';
+    $destino    = $_POST['destino'] ?? 'No especificado';
+    $peso       = $_POST['peso'] ?? 'No especificado';
 
     // Asunto del correo
-    $subject = "Formulario de Contacto";
+    $subject = "Solicitud de Servicio - $empresa";
 
     // Crear el contenido HTML del mensaje
     $html = "
@@ -32,7 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <p><strong>Nombre:</strong> $nombres</p>
                                 <p><strong>Teléfono:</strong> $telefono</p>
                                 <p><strong>Email:</strong> $email</p>
-                                <p><strong>Comentario:</strong> $comentario</p>
+                                <p><strong>Empresa:</strong> $empresa</p>
+                                <p><strong>Producto:</strong> $producto</p>
+                                <p><strong>Servicio:</strong> $servicio</p>
+                                <p><strong>Origen:</strong> $origen</p>
+                                <p><strong>Destino:</strong> $destino</p>
+                                <p><strong>Peso:</strong> $peso</p>
+                                <p><strong>Detalles:</strong> $detalles</p>
                             </td>
                             <td width='14'></td>
                         </tr>

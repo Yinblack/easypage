@@ -1,12 +1,12 @@
 <footer class="bg-primary bg-opacity-70 text-light" id="footer01">
-	<div class="container py-5">
-		<div class="row justify-content-between align-items-center">
-			<div class="col-auto">
+	<div class="container-fluid py-5" style="background-image: url('{{ const.BASE_URL }}assets/img/pattern.svg');">
+		<div class="row justify-content-center justify-content-lg-between align-items-center">
+			<div class="col-auto mb-3 mb-md-0">
 				<a class="img-fluid" href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}">
-					<img class="w-100" src="{{ const.BASE_URL }}assets/img/logo.svg" alt="">
+					<img class="w-100" src="{{ const.BASE_URL }}assets/img/logo_white.svg" alt="">
 				</a>
 			</div>
-			<div class="col-auto">
+			<div class="col-auto mb-3 mb-md-0">
 				<!------------- Social List -->
 					{% include 'components/social_list.html' %}
 				<!-- Social List ------------->
@@ -18,7 +18,7 @@
 			<div class="row justify-content-center">
 				<div class="col-auto">
 					<span class="text-light text-opacity-75">
-						Copyright © 2024 EasyPage. 
+						Copyright © 2024 ROALSA CARRIERS. 
 						{% if const.LAN == "_en" %}
 							All Rights Reserved
 						{% else %}

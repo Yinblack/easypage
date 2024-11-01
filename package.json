@@ -2,7 +2,8 @@
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "bootstrap": "^5.3.3",
-    "gsap": "npm:@gsap/shockingly@^3.12.5"
+    "gsap": "npm:@gsap/shockingly@^3.12.5",
+    "photoswipe": "^5.4.4"
   },
   "devDependencies": {
     "pnotify": "^5.2.0"
