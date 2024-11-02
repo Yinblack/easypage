@@ -262,7 +262,7 @@ html{
                 
             }
             >form{
-                width: 650px;
+                width: 720px;
                 max-width: 100%;
             }
         }
@@ -448,10 +448,14 @@ html{
     background-color: $tertiary;
 }
 
-@include media-breakpoint-down(xl) {
+
+@media (max-width: 1399px) {
     #cotiza {
         margin-bottom: -200px;
     }
+}
+
+@include media-breakpoint-down(xl) {
     #quienes-somos>div:nth-child(2)>div.row>div:first-child{
         height: 100svh !important;
         max-height: 500px;

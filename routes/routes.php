@@ -11,10 +11,10 @@ class routes extends Controller
         echo $this->_twig->render('sections/home.html', compact('const'));
     }
 
-    public function clientes()
+    public function trabajo()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/clientes.html', compact('const'));
+        echo $this->_twig->render('sections/bolsa_de_trabajo.html', compact('const'));
     }
 
 

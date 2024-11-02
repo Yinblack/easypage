@@ -7,21 +7,6 @@ ROALSA CARRIERS
 
 
 {% block extraCSS %}
-	<link
-	  href="{{ const.BASE_URL }}node_modules/@pnotify/core/dist/PNotify.css"
-	  rel="stylesheet"
-	  type="text/css"
-	/>
-	<link
-	  href="{{ const.BASE_URL }}node_modules/@pnotify/mobile/dist/PNotifyMobile.css"
-	  rel="stylesheet"
-	  type="text/css"
-	/>
-	<link
-	  href="{{ const.BASE_URL }}node_modules/@pnotify/core/dist/BrightTheme.css"
-	  rel="stylesheet"
-	  type="text/css"
-	/>
 	<link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/photoswipe/dist/photoswipe.css">
 {% endblock %}
 
@@ -50,30 +35,6 @@ ROALSA CARRIERS
 			});
 		});
 	</script>
-	<script
-	  type="text/javascript"
-	  src="{{ const.BASE_URL }}node_modules/@pnotify/core/dist/PNotify.js"
-	></script>
-	<script
-	  type="text/javascript"
-	  src="{{ const.BASE_URL }}node_modules/@pnotify/mobile/dist/PNotifyMobile.js"
-	></script>
-	<script type="text/javascript">
-	  PNotify.defaultModules.set(PNotifyMobile, {});
-	</script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-	{% if const.LAN == "_en" %}
-		<script>
-			validate.validators.presence.options = {message: "can´t be empty."};
-			validate.validators.numericality.options = {message: "must be a numeric value."};
-		</script>
-	{% else %}
-		<script>
-			validate.validators.presence.options = {message: "no puede estar vacío."};
-			validate.validators.numericality.options = {message: "debe de ser un valor númerico."};
-		</script>
-	{% endif %}
-	<script src="{{ const.BASE_URL }}assets/js/contact_form.js"></script>
 	<script type="module">
 		import PhotoSwipeLightbox from '{{ const.BASE_URL }}node_modules/photoswipe/dist/photoswipe-lightbox.esm.js';
 		const lightbox = new PhotoSwipeLightbox({
@@ -112,7 +73,7 @@ ROALSA CARRIERS
 <section id="main" class="px-3 px-sm-0 fixTopMargin z-1 position-relative">
 	<div class="container z-1">
 		<div class="row justify-content-center align-items-start">
-			<div class="col-12 col-md pb-4 pb-xl-0 fx_gsap" gsap-directionY="10" gsap-start="bottom bottom" gsap-end="bottom top">
+			<div class="col-12 col-md pb-5 fx_gsap" gsap-directionY="10" gsap-start="bottom bottom" gsap-end="bottom top">
 				<div class="row">
 					<div class="col-12 px-0 px-sm-2">
 						<span class="h1 title fw-bold">TRANSPORTE DE <span class="text-secondary d-block">CARGA TERRESTRE</span></span>
@@ -127,7 +88,10 @@ ROALSA CARRIERS
 					</div>
 				</div>
 			</div>
-			<form class="col-12 fx_gsap" id="cotiza" gsap-directionY="-15" gsap-start="bottom center" gsap-end="bottom top">
+			<form class="col-12 fx_gsap" id="cotiza" gsap-directionY="-5" gsap-start="bottom center" gsap-end="bottom top">
+				<iframe style="border:none;width:100%;" id="job-application-form-w261a2-1" src="https://opnform.com/forms/job-application-form-w261a2-1"></iframe><script type="text/javascript" onload="initEmbed('job-application-form-w261a2-1')" src="https://opnform.com/widgets/iframe.min.js"></script>
+			</form>
+<!-- 			<form class="col-12 fx_gsap" id="cotiza" gsap-directionY="-15" gsap-start="bottom center" gsap-end="bottom top">
 				<div class="row g-4">
   					<div class="col-md-6 parent_form">
   					  	<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -162,7 +126,7 @@ ROALSA CARRIERS
 					  <span class="visually-hidden">{% if const.LAN == "_en" %}Loading...{% else %}Cargando...{% endif %}</span>
 					</div>
 				</div>	
-			</form>
+			</form> -->
 		</div>
 	</div>
 </section>
@@ -388,7 +352,10 @@ ROALSA CARRIERS
 					</div>
 				</div>
 			</div>
-			<form class="col-12 col-lg-6 fx_gsap" id="contact_form" gsap-directionY="-15" gsap-start="bottom center" gsap-end="bottom top">
+			<form class="col-12 col-lg-6 fx_gsap" gsap-directionY="-15" gsap-start="bottom center" gsap-end="bottom top" id="contact_form">
+				<iframe style="border:none;width:100%;" id="job-application-form-w261a2-1-1" src="https://opnform.com/forms/job-application-form-w261a2-1-1"></iframe><script type="text/javascript" onload="initEmbed('job-application-form-w261a2-1-1')" src="https://opnform.com/widgets/iframe.min.js"></script>
+			</form>
+<!-- 			<form class="col-12 col-lg-6 fx_gsap" id="contact_form" gsap-directionY="-15" gsap-start="bottom center" gsap-end="bottom top">
 				<div class="row g-4">
   					<div class="col-md-6 parent_form">
   					  	<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -439,7 +406,7 @@ ROALSA CARRIERS
 					  <span class="visually-hidden">{% if const.LAN == "_en" %}Loading...{% else %}Cargando...{% endif %}</span>
 					</div>
 				</div>
-			</form>
+			</form> -->
 		</div>
 	</div>
 </section>
