@@ -15,20 +15,6 @@ $enable-rounded: false;
 $font-family-sans-serif: 'Syne', sans-serif;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-// Required Bootstrap imports
-// @import "../../node_modules/bootstrap/scss/variables";
-// @import "../../node_modules/bootstrap/scss/variables-dark";
-// @import "../../node_modules/bootstrap/scss/maps";
-// @import "../../node_modules/bootstrap/scss/mixins";
-// @import "../../node_modules/bootstrap/scss/root";
-
-// // Required custom styles
-// @import "../../node_modules/bootstrap/scss/utilities";
-// @import "../../node_modules/bootstrap/scss/containers";
-// @import "../../node_modules/bootstrap/scss/grid";
-
-// @import "../../node_modules/bootstrap/scss/utilities/api";
 @import "./font_size";
 @import "./mixins";
 @import "./gral";
@@ -463,6 +449,9 @@ html{
     }
     #quienes-somos>div:nth-child(2)>div.row>div:nth-child(3) {
         flex: 1 0 0%;
+    }
+    header#header_04>div.container>nav>ul>li {
+        padding: 7px;
     }
 }
 

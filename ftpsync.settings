@@ -5,10 +5,9 @@
 	"default": {
 
 		"host": "173.231.230.140",
-		"username": "darvizu@bloque9.design",  // or null for anonymous login
-		"password": "REWZIVJzu2CU",
+		"username": "daniel@roalsa.com.mx",  // or null for anonymous login
+		"password": "9zlQ=zW&cw4F",
 		"path": "/",
-
 		"upload_on_save": true, // set *false* if you do not want to upload on save!
 
 		// "port": 21,
