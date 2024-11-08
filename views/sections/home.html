@@ -48,18 +48,46 @@ EASYPAGE | Inicio
 <section>
 	<div class="container">
 		<div class="row justify-content-between align-items-center">
-			<div class="col-12 pb-3 pb-md-5 fx_gsap" gsap-directionY="10" gsap-start="center bottom" gsap-end="bottom top">
-				<div class="row">
-					<div class="col-12 col-md-6">
-						<span class="h2 text-primary title">
-							<small>Technology Industry</small>
-							 Investing Heavily in Progressive Web Apps
-						</span>
-					</div>
-				</div>
+			<div class="col-12 pb-3 pb-md-0 col-md-5">
+				<span class="h2 text-primary title d-inline-block pb-3 pb-md-5 m-0">
+						{% if const.LAN == "_en" %}
+						    <small>EasyPage Project</small>
+						{% elseif const.LAN == "_de" %}
+						    <small>EasyPage Projekt</small>
+						{% elseif const.LAN == "_fr" %}
+						    <small>Projet EasyPage</small>
+						{% elseif const.LAN == "_zh" %}
+						    <small>易頁項目</small>
+						{% else %}
+						    <small>Proyecto EasyPage</small>
+						{% endif %}
+						{% if const.LAN == "_en" %}
+						    A framework with infinite possibilities for your website.
+						{% elseif const.LAN == "_de" %}
+						    Ein Framework mit unendlichen Möglichkeiten für Ihre Website.
+						{% elseif const.LAN == "_fr" %}
+						    Un framework aux possibilités infinies pour votre site Web.
+						{% elseif const.LAN == "_zh" %}
+						    為您的網站提供無限可能性的框架。
+						{% else %}
+						    Un framework con infinitas posibilidades para tu web.
+						{% endif %}
+				</span>
+				<p>
+					{% if const.LAN == "_en" %}
+					    Everything you need to create amazing websites quickly and easily. Includes pre-built components like headers (navbars), footers, sliders, forms, and more, which you can customize and adapt to each project. With multilingual support configured from the URL and an optimized structure, it simplifies the development of modern and scalable sites. It's the perfect tool to build engaging web experiences without the hassle!
+					{% elseif const.LAN == "_de" %}
+					    Alles, was Sie brauchen, um schnell und einfach fantastische Websites zu erstellen. Es enthält vordefinierte Komponenten wie Kopfzeilen (Navigationsleisten), Fußzeilen, Schieberegler, Formulare und mehr, die Sie individuell anpassen und an jedes Projekt anpassen können. Mit mehrsprachiger Unterstützung, die über die URL konfiguriert wird, und einer optimierten Struktur vereinfacht es die Entwicklung moderner, skalierbarer Websites. Es ist das perfekte Tool, um ohne großen Aufwand ansprechende Web-Erlebnisse zu erstellen!
+					{% elseif const.LAN == "_fr" %}
+					    Tout ce dont vous avez besoin pour créer des sites Web étonnants rapidement et facilement. Il comprend des composants prédéfinis tels que des en-têtes (barres de navigation), des pieds de page, des curseurs, des formulaires et bien plus encore, que vous pouvez personnaliser et adapter à chaque projet. Avec un support multilingue configuré depuis l'URL et une structure optimisée, il simplifie le développement de sites modernes et évolutifs. C'est l'outil parfait pour créer des expériences Web attrayantes sans tracas !
+					{% elseif const.LAN == "_zh" %}
+					    快速輕鬆地創建令人驚嘆的網站所需的一切。它包括預先定義的元件，例如標題（導覽列）、頁腳、滑桿、表單等，您可以自訂並適應每個項目。透過從 URL 配置的多語言支援和最佳化的結構，它簡化了現代、可擴展網站的開發。它是輕鬆建立引人入勝的網路體驗的完美工具！
+					{% else %}
+					    Todo lo que necesitas para crear sitios web increíbles de manera rápida y sencilla. Incluye componentes predefinidos como headers (navbars), footers, sliders, formularios y más, que puedes personalizar y adaptar a cada proyecto. Con soporte multilingüe configurado desde la URL y una estructura optimizada, simplifica el desarrollo de sitios modernos y escalables. ¡Es la herramienta perfecta para construir experiencias web atractivas sin complicaciones!
+					{% endif %}
+				</p>
 			</div>
-			<div class="col-12 pb-3 pb-md-0 col-md-5">Software development is a dynamic world with new and modern technologies rising in tandem with user expectations and market demands. This is why organizations need to stay current with these technological advancements now more than ever. So, as we look ahead to 2024, there are several trends poised to shape the landscape of software development.</div>
-			<div class="col-12 col-md-6 fx_gsap" gsap-directionY="-15" gsap-start="center bottom" gsap-end="bottom top">
+			<div class="col-12 col-md-6 fx_gsap" gsap-directionY="-5" gsap-start="center bottom" gsap-end="bottom top">
 				<img src="{{ const.BASE_URL }}assets/img/test/01.webp" alt="" class="img-fluid">
 			</div>
 		</div>
