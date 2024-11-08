@@ -97,7 +97,7 @@ header#header_04{
                             position: absolute;
                             left: 0%;
                             top: -100%;
-                            color: $tertiary;
+                            color: $secondary;
                             @include ease(.5s);
                         }
                         &:before {

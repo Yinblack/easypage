@@ -41,25 +41,24 @@ $font-family-sans-serif: 'Syne', sans-serif;
 @import "./slider_maxsize";
 @import "./components";
 
-html{
-    overflow-x: hidden;
-    max-width: 100vw;
-    font-family: "Afacad Flux", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-    font-size: 18px;
-    font-weight: 400;
-	body{
-    	overflow-x: hidden;
-    	max-width: 100vw;    	
-    	line-height: 1.6;
-        padding: 0;
-        margin: 0;
-        a{
-            @include ease(.5s);
-            text-decoration: none;
-            outline: none;
-        }
-	}
+//<----------AQUI TU SASS PERSONALIZADO
+
+
+
+@include media-breakpoint-down(xl) {
 }
+
+@include media-breakpoint-down(lg) {
+}
+
+@include media-breakpoint-down(md) {
+}
+
+@include media-breakpoint-down(sm) {
+}
+
+@include media-breakpoint-down(xs) {
+}
+//AQUI TU SASS PERSONALIZADO------------>
+
+
