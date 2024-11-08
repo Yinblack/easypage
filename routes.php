@@ -17,6 +17,5 @@ class routes extends Controller
         echo $this->_twig->render('sections/clientes.html', compact('const'));
     }
 
-
 }
 ?>

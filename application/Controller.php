@@ -1,4 +1,7 @@
 <?php
+require_once './vendor/autoload.php';
+use Dotenv\Dotenv;
+
 abstract class Controller
 {
     protected $_view;
@@ -6,9 +9,7 @@ abstract class Controller
     public function __construct() {
         $this->_view = new View(new Request);
 
-
         /*TWIG3 INPLEMENTATION*/
-        require_once './vendor/autoload.php';
         $loader = new \Twig\Loader\FilesystemLoader('./views');
         $this->_twig = new \Twig\Environment($loader, [
             'debug'=>true,
@@ -20,10 +21,10 @@ abstract class Controller
 
         /*CONSTANTES*/
         $this->_const = array();
-        $jsondata = file_get_contents('routes/config.json'); 
-        $data = json_decode($jsondata, true);
-        foreach ($data as $key => $value) {
-            $this->_const[$key]=$value;
+        $dotenv = Dotenv::createImmutable(dirname(__DIR__));
+        $dotenv->load();
+        foreach ($_ENV as $key => $value) {
+            $this->_const[$key] = $value;
         }
         if (isset($_GET['url'])) {
             $url=$_GET['url'];

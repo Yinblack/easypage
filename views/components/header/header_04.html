@@ -1,4 +1,4 @@
-<header id="header_01">
+<header id="header_04">
 	<div class="container">
 		<a href="{{ const.BASE_URL }}{% if const.LAN == '_en' %}_en{% endif %}">
 			<img src="{{ const.BASE_URL }}assets/img/empresa/logo.svg" alt="">
@@ -6,6 +6,9 @@
 		<!------------- NavBar -->
 			{% include 'components/sub/nav.html' %}
 		<!-- NavBar ------------->
+		<a class="btn btn-primary d-none d-lg-inline-flex js_effect" href="{{ const.BASE_URL }}#contacto">
+			Contacto
+		</a>
 		<button class="hamburger" type="button">
 			<span></span>
 			<span></span>
@@ -13,4 +16,4 @@
 		</button>  
 	</div>
 </header>
-<script src="{{ const.BASE_URL }}assets/js/header_01.js"></script>
+<script src="{{ const.BASE_URL }}assets/js/header_04.js"></script>

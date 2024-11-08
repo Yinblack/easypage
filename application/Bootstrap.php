@@ -4,7 +4,7 @@ class Bootstrap
     public static function run(Request $peticion)
     {
         $controller = 'routes';
-        $rutaControlador = ROOT . 'routes' . DS . $controller . '.php';
+        $rutaControlador = ROOT . DS . $controller . '.php';
         $metodo = $peticion->getMetodo();
         if(is_readable($rutaControlador)){
             require_once $rutaControlador;

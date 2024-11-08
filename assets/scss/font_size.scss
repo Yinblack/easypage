@@ -1,0 +1,44 @@
+h1, .h1{
+    font-size: clamp(2.5rem, 2.3466rem + 0.6818vw, 3.4375rem);
+}
+h2, .h2{
+    font-size: clamp(2.1875rem, 2.1364rem + 0.2273vw, 2.5rem);
+}
+h3, .h3{
+    font-size: clamp(1.875rem, 1.8239rem + 0.2273vw, 2.1875rem);
+}
+h4, .h4{
+    font-size: clamp(1.5625rem, 1.5114rem + 0.2273vw, 1.875rem);
+}
+h5, .h5{
+    font-size: clamp(1.25rem, 1.1989rem + 0.2273vw, 1.5625rem);
+}
+h6, .h6{
+    font-size: clamp(1.125rem, 1.1045rem + 0.0909vw, 1.25rem);
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    font-weight: 600;
+}
+
+
+@include media-breakpoint-down(xl) {
+}
+
+@include media-breakpoint-down(lg) {
+}
+
+@include media-breakpoint-down(md) {
+}
+
+@include media-breakpoint-down(sm) {
+    h1, .h1{
+        font-size: 2rem;
+    }
+    h2, .h2{
+        font-size: 1.65rem;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+
+}

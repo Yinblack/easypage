@@ -1,4 +1,9 @@
 <?php
+require_once './vendor/autoload.php';
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recoger los datos del formulario
@@ -46,11 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </body>
     </html>";
 
-    // Definir la URL y los datos POST
-    $url = 'https://bloque9.email/v1/send/';  // Reemplaza con la URL correcta
+    $url = 'https://bloque9.email/v1/send/';
     $post = array(
-        'id'      => '4zctpkrgzl1v1rra',    // ID correcto
-        'key'     => 'lhuwxnlbrmjwvi6f',    // Llave API correcta
+        'id'      => $_ENV['B9MAIL_ID'],
+        'key'     => $_ENV['B9MAIL_KEY'],
         'subject' => $subject,
         'message' => $html
     );

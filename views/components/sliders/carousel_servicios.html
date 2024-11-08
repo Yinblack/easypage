@@ -1,0 +1,102 @@
+<script src="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/css/splide.min.css">
+<div id="carousel_servicios" class="splide" role="group" aria-label="Splide Basic HTML Example">
+  	<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<div>
+					<img src="{{ const.BASE_URL }}assets/img/servicio_transporte.webp" alt="">
+					<div>
+  						<a data-bs-toggle="collapse" class="collapsed" href="#servicio_01" role="button" aria-expanded="false" aria-controls="servicio_01">
+  							TRANSPORTE DE CARGA
+							<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.72107 11.3318H21.7211" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M11.7211 1.33179V21.3318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+  						</a>
+						<div class="collapse pt-3" id="servicio_01">
+  					    	<span class="d-block">La seguridad y eficiencia en nuestros transportes es nuestra prioridad. Contamos con una flota de vehículos bien mantenidos y un equipo de conductores experimentados para transportar tus cargas de forma segura y tiempo.</span>
+  					    	<ul>
+  					    		<li>Transporte de carga en plataforma 40 ft</li>
+  					    		<li>Transporte de carga seca en caja de 48 y 53 ft</li>
+  					    		<li>Transporte de carga perecedera en caja refrigerada de 53 ft</li>
+  					    		<li>Unidades tipo Rabon y Thorton</li>
+  					    	</ul>
+  					    	<a href="{{ const.BASE_URL }}#contacto" class="btn button-secondary rounded-pill w-100 text-center mt-2 js_effect">Contáctanos hoy</a>
+						</div>
+					</div>		
+				</div>
+			</li>
+			<li class="splide__slide">
+				<div>
+					<img src="{{ const.BASE_URL }}assets/img/servicio_consultoria.webp" alt="">
+					<div>
+  						<a data-bs-toggle="collapse" class="collapsed" href="#servicio_02" role="button" aria-expanded="false" aria-controls="servicio_02">
+  							CONSULTORÍA
+							<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.72107 11.3318H21.7211" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M11.7211 1.33179V21.3318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+  						</a>
+						<div class="collapse pt-3" id="servicio_02">
+  					    	<span class="d-block">Estamos aquí para ayudarte a establecer y optimizar tus protocolos de suministro y entrega. Contáctanos para obtener más información sobre nuestros servicios de consultoría.</span>
+  					    	<ul>
+								<li> Consultoría en eficiencia operativa de autotransporte de carga</li>
+								<li>Consultoría en Princing</li>
+  					    	</ul>
+  					    	<a href="{{ const.BASE_URL }}#contacto" class="btn button-secondary rounded-pill w-100 text-center mt-2 js_effect">Solicita información</a>
+						</div>
+					</div>		
+				</div>
+			</li>
+			<li class="splide__slide">
+				<div>
+					<img src="{{ const.BASE_URL }}assets/img/servicio_poliza.webp" alt="">
+					<div>
+  						<a data-bs-toggle="collapse" class="collapsed" href="#servicio_03" role="button" aria-expanded="false" aria-controls="servicio_03">
+  							POLIZAS-FIANZA
+							<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.72107 11.3318H21.7211" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M11.7211 1.33179V21.3318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+  						</a>
+						<div class="collapse pt-3" id="servicio_03">
+  					    	<span class="d-block">Contrata con nosotros la emisión de tu poliza-fianza y disfruta de la tranquilidad de saber que tu negocio está protegido en caso de incumplimiento de contrato o pago de deudas.</span>
+  					    	<ul>
+  					    		<li>Emisión de pólizas-fianza para circulación de semirremolques americanos en el territorio nacional</li>
+  					    	</ul>
+  					    	<a href="{{ const.BASE_URL }}#contacto" class="btn button-secondary rounded-pill w-100 text-center mt-2 js_effect">Habla con un experto</a>
+						</div>
+					</div>		
+				</div>
+			</li>
+		</ul>
+  	</div>
+</div>
+<script>
+  	document.addEventListener( 'DOMContentLoaded', function() {
+    	var splide = new Splide( '#carousel_servicios', {
+		  	focus: 'center',
+		  	perPage: 3,
+		  	gap: 30,
+		  	arrows: false,
+		  	fixedHeight: 650,
+			breakpoints: {
+				1200: {
+					gap: 15
+				},
+				992: {
+					fixedHeight: 550,
+					perPage: 2
+				},
+				768: {
+					perPage: 1
+				},
+				576: {
+					gap: 0
+				},
+			}
+		});
+		splide.mount();
+  } );
+</script>
