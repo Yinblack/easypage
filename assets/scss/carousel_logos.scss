@@ -14,8 +14,10 @@
 					position: relative;
 					max-width: 100%;
 					>img{
-						width: 225px;
-					    max-width: 70svw;
+						max-width: 200px;
+						max-height: 200px;
+						height: auto;
+						width: auto;
 						-moz-transform: scale(1) !important;
 						-webkit-transform: scale(1) !important;
 						-o-transform: scale(1) !important;
@@ -25,11 +27,11 @@
 					}
 					&:hover{
 						>img{
-							-moz-transform: scale(1.1) !important;
-							-webkit-transform: scale(1.1) !important;
-							-o-transform: scale(1.1) !important;
-							-ms-transform: scale(1.1) !important;
-							transform: scale(1.1) !important;
+							-moz-transform: scale(1.05) !important;
+							-webkit-transform: scale(1.05) !important;
+							-o-transform: scale(1.05) !important;
+							-ms-transform: scale(1.05) !important;
+							transform: scale(1.05) !important;
 						}
 					}
 				}

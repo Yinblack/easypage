@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Recalcular al cargar todo
+window.addEventListener('load', () => {
+  ScrollTrigger.refresh();
+});
+// Si tienes iframes/imágenes que cargan después:
+const iframes = document.querySelectorAll('iframe');
+iframes.forEach(iframe => {
+  iframe.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+  });
+});
+
+
 function handleScroll() {
   const htmlElement = document.documentElement; // Selecciona el elemento <html>
   if (window.scrollY > 0) {

@@ -18,7 +18,6 @@ abstract class Controller
         $this->_twig->addExtension(new \Twig\Extension\DebugExtension());
         /**/
 
-
         /*CONSTANTES*/
         $this->_const = array();
         $dotenv = Dotenv::createImmutable(dirname(__DIR__));

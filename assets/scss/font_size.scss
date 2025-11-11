@@ -1,8 +1,8 @@
 h1, .h1{
-    font-size: clamp(2.5rem, 2.3466rem + 0.6818vw, 3.4375rem);
+    font-size: clamp(2.8125rem, 2.5446rem + 1.3393vw, 4.6875rem);
 }
 h2, .h2{
-    font-size: clamp(2.1875rem, 2.1364rem + 0.2273vw, 2.5rem);
+    font-size: clamp(2.5rem, 2.2589rem + 1.2054vw, 4.1875rem);
 }
 h3, .h3{
     font-size: clamp(1.875rem, 1.8239rem + 0.2273vw, 2.1875rem);
@@ -21,6 +21,37 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 }
 
 
+@mixin line-height-decimals($min: 1, $max: 3, $step: 0.1) {
+  $i: $min;
+  @while $i <= $max {
+    $class-name: str-replace("#{$i}", ".", "_"); // Reemplaza punto por guion bajo
+    .lh_#{$class-name} {
+      line-height: $i;
+    }
+    $i: $i + $step;
+  }
+}
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+@include line-height-decimals();
+
+
+@mixin font-weight-classes($min: 100, $max: 900, $step: 100) {
+  @for $w from $min through $max {
+    @if $w % $step == 0 {
+      .fw-#{$w} {
+        font-weight: $w;
+      }
+    }
+  }
+}
+@include font-weight-classes();
+
 @include media-breakpoint-down(xl) {
 }
 
@@ -31,12 +62,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 }
 
 @include media-breakpoint-down(sm) {
-    h1, .h1{
-        font-size: 2rem;
-    }
-    h2, .h2{
-        font-size: 1.65rem;
-    }
+
 }
 
 @include media-breakpoint-down(xs) {

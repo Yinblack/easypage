@@ -1,5 +1,10 @@
 footer#footer01{
 	>div{
+		&:first-child{
+    		background-repeat: repeat-x;
+    		background-size: cover;
+    		background-position: 50% 50%;
+		}
 		&:last-child{
 			font-size: .85rem;
 			>*{
